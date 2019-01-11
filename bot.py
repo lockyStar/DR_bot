@@ -63,7 +63,7 @@ def get_chats():
 
 def update_chats(_chat_id):
     f = open("chats.txt", "a+")
-    f.write("\n" + _chat_id)
+    f.write("\n" + str(_chat_id))
 
 
 def get_chats_from_update(req):
