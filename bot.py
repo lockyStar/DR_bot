@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
+
 import requests
 import datetime
 from time import sleep
+import json
 
 if datetime.datetime.today().month > 9 or datetime.datetime.today().month == 9 and datetime.datetime.today().day > 27:
     B_DAY = datetime.date(year=datetime.datetime.today().year + 1, month=9, day=27)
@@ -51,7 +54,7 @@ def send_mess(chat, text):
 def update_log(updates):
     f = open("messages.log", "a+")
     for update in updates:
-        f.write("\n" + str(update))
+        f.write("\n" + json.dumps(update))
 
 
 def get_chats():
